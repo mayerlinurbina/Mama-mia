@@ -1,4 +1,4 @@
-export default function Card() {
+export default function Card({ producto }) {
   return (
     <article className="mb-2 col-12 col-md-6 col-xl-3">
       <div className="card">
@@ -9,17 +9,19 @@ export default function Card() {
         />
         <div className="card-body">
           <h2>
-            <b>Pizza Napolitana</b>
+  <b>{producto.nombre}</b>
           </h2>
-          <h6>Ingrediente</h6>
+          <h6>Ingredientes</h6>
           <ul>
-            <li>Mozzarella</li>
-            <li>Tomate</li>
-            <li>Orégano</li>
-            <li>Jamón</li>
+            {producto.ingredientes.map((ingrediente)=>(
+              <li>
+                {ingrediente}
+              </li>
+            ))}
+            
           </ul>
           <h5>
-            <b>Precio: $5.950</b>
+            <b>${producto.precio}</b>
           </h5>
           <div className="d-flex gap-2">
             <a
@@ -29,7 +31,7 @@ export default function Card() {
               Comprar
             </a>
             <a
-              href="/pizzas/1"
+              href={`/pizzas/${producto.id}`}
               className="btn btn-outline-danger"
             >
               Ver detalles

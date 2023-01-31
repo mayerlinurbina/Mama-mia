@@ -1,0 +1,9 @@
+.banner-main{
+    background-image: url(./assets/pizza-banner.jpeg);
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
