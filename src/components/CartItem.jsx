@@ -1,17 +1,17 @@
-export default function CartItem() {
+export default function CartItem({ producto }) {
   return (
     <li className="list-group-item">
       <div className="d-flex justify-content-between align-items-center">
         <div className="d-flex align-items-center">
           <img
             className="me-3"
-            src="https://via.placeholder.com/100"
-            alt="Pizza"
+            src={producto.imagen}
+            alt={producto.nombre}
             width="100"
           />
           <div>
-            <h5 className="mb-0">Pizza name</h5>
-            <small className="text-muted">$5.990</small>
+  <h5 className="mb-0">{producto.nombre}</h5>
+  <small className="text-muted">${producto.precio}</small>
           </div>
         </div>
         <div className="d-flex gap-1">

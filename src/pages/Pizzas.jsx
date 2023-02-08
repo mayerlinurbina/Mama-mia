@@ -1,12 +1,15 @@
+import { useContext } from "react";
 import Card from "../components/Card";
+import MiContext from "../mi-context"
 
 export default function Pizzas() {
+  const {agregarAlCarrito, productos} = useContext(MiContext)
   return (
     <div>
       <h1>Pizzas</h1>
       <div className="row">
-        {[1, 2, 3, 4].map((item) => (
-          <Card key={item} />
+        {productos.map((producto) => (
+          <Card agregarAlCarrito={agregarAlCarrito} producto={producto} key={producto.id} />
         ))}
       </div>
     </div>

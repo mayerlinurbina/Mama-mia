@@ -10,6 +10,8 @@ import MiContext from './mi-context'
 
 export default function App() {
 
+  const [productosEnCarrito, setProductosEnCarrito] = useState([]);
+
   const [productos, setProductos] = useState([
     {
       id:1,
@@ -50,12 +52,16 @@ export default function App() {
 
   ])
 
+  const agregarAlCarrito = (producto) => {
+    setProductosEnCarrito([...productosEnCarrito, producto])
+  }
+
 
   return (
     <div>
       <Navbar />
 
-      <MiContext.Provider value={{ productos }}>
+      <MiContext.Provider value={{ productos, productosEnCarrito, agregarAlCarrito }}>
         <main className="container">
           <Routes>
             <Route

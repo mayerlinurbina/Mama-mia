@@ -1,26 +1,28 @@
+import { NavLink } from "react-router-dom";
+
 export default function Navbar() {
   return (
     <nav className="navbar navbar-dark bg-dark">
       <div className="container">
-        <a
+        <NavLink
           className="navbar-brand"
-          href="/"
+          to="/"
         >
           MamaMía 😋
-        </a>
+        </NavLink>
         <div className="d-flex gap-2">
-          <a
+          <NavLink
             className="btn btn-outline-light"
-            href="/pizzas"
+            to="/pizzas"
           >
             Pizzas
-          </a>
-          <a
+          </NavLink>
+          <NavLink
             className="btn btn-outline-info me-2"
-            href="/cart"
+            to="/cart"
           >
             Cart: $3.99
-          </a>
+          </NavLink>
         </div>
       </div>
     </nav>

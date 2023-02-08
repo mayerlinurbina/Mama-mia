@@ -1,4 +1,7 @@
-export default function Card({ producto }) {
+export default function Card({ producto, agregarAlCarrito }) {
+
+
+
   return (
     <article className="mb-2 col-12 col-md-6 col-xl-3">
       <div className="card">
@@ -36,6 +39,7 @@ export default function Card({ producto }) {
             >
               Ver detalles
             </a>
+            <button onClick={() => agregarAlCarrito(producto)} className="btn btn-primary">Agregar al carrito</button>
           </div>
         </div>
       </div>
